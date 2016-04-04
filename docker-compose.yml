@@ -26,7 +26,7 @@ services:
       - INFLUXDB_USER=root
       - INFLUXDB_PASS=pedrocesar
   testing:
-    build: ./testing
+    image: pedrocesarti/internet-speedtest-docker
     links:
       - db:db
     environment:
