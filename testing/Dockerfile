@@ -8,7 +8,7 @@ RUN wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py -O /
 RUN chmod +x /app/speedtest/speedtest_cli.py
 
 
-ADD deploy/ /app/speedtest/
+ADD scripts/ /app/speedtest/
 
 
-CMD bash -c /app/speedtest/test_connection.sh
+CMD bash -c /app/speedtest/init_test_connection.sh
