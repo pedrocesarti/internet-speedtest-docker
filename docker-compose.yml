@@ -7,8 +7,8 @@ services:
       - "8083:8083"
       - "8086:8086"
     environment:
-      - ADMIN_USER=root
-      - INFLUXDB_INIT_PWD=pedrocesar
+      - ADMIN_USER=${INFLUX_USER-root}
+      - INFLUXDB_INIT_PWD=${INFLUX_PASSWD}
       - PRE_CREATE_DB=speedtest
   web:
     image: tutum/grafana 
@@ -17,17 +17,17 @@ services:
     ports:
       - "8080:80"
     environment:
-      - HTTP_USER=admin
-      - HTTP_PASS=pedrocesar
+      - HTTP_USER=${GRAFANA_USER-admin}
+      - HTTP_PASS=${GRAFANA_PASSWD}
       - INFLUXDB_PROTO=http
       - INFLUXDB_HOST=db
       - INFLUXDB_PORT=8086
       - INFLUXDB_NAME=speedtest
-      - INFLUXDB_USER=root
-      - INFLUXDB_PASS=pedrocesar
+      - INFLUXDB_USER=${INFLUX_USER-root}
+      - INFLUXDB_PASS=${INFLUX_PASSWD}
   testing:
     image: pedrocesarti/internet-speedtest-docker
     links:
       - db:db
     environment:
-      - TIME_SLEEP=10
+      - TIME_SLEEP=${TESTING_INTERVAL-30}
