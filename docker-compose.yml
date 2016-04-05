@@ -30,4 +30,4 @@ services:
     links:
       - db:db
     environment:
-      - TIME_SLEEP=${TESTING_INTERVAL}
+      - TIME_SLEEP=${TEST_INTERVAL}
