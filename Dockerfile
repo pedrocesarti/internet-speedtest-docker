@@ -3,8 +3,8 @@ MAINTAINER Pedro César <pedrocesar.ti@gmail.com>
 
 ENV GRAFANA_VERSION 1.9.1
 
-RUN apt-get update && apt-get install -y wget && 
-    wget http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz -O grafana.tar.gz && \
+RUN apt-get update && apt-get install -y wget 
+RUN wget http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz -O grafana.tar.gz && \
     tar zxf grafana.tar.gz && \
     rm grafana.tar.gz && \
     rm -rf app && \
