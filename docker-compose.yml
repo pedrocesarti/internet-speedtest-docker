@@ -20,7 +20,7 @@ services:
       - HTTP_USER=${GRAFANA_USER}
       - HTTP_PASS=${GRAFANA_PASSWD}
       - INFLUXDB_PROTO=http
-      - INFLUXDB_HOST=db
+      - INFLUXDB_HOST=localhost
       - INFLUXDB_PORT=8086
       - INFLUXDB_NAME=speedtest
       - INFLUXDB_USER=${INFLUX_USER}
