@@ -2,7 +2,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
 
-    root /app;
+    root /app/grafana;
     index index.html index.htm;
 
     server_name localhost;
@@ -13,7 +13,7 @@ server {
 
     location / {
         auth_basic "Restricted";
-        auth_basic_user_file /app/.htpasswd;
+        auth_basic_user_file /app/grafana/.htpasswd;
         try_files $uri $uri/ =404;
     }
 }

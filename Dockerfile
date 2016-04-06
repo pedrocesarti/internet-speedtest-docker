@@ -13,14 +13,15 @@ RUN wget http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz -O
 
 ADD conf/config.js /app/grafana/config.js
 ADD conf/default /etc/nginx/sites-enabled/default
+ADD conf/default.json /app/grafana/app/dashboards/default.json
 
 ENV HTTP_USER admin
 ENV HTTP_PASS **Random**
 
 ENV INFLUXDB_PROTO http
-ENV INFLUXDB_HOST **ChangeMe**
+ENV INFLUXDB_HOST db
 ENV INFLUXDB_PORT 8086
-ENV INFLUXDB_NAME **ChangeMe**
+ENV INFLUXDB_NAME speedtest
 ENV INFLUXDB_USER root
 ENV INFLUXDB_PASS root
 ENV INFLUXDB_IS_GRAFANADB false
