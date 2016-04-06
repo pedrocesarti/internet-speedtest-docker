@@ -9,7 +9,8 @@ services:
     environment:
       - ADMIN_USER=${INFLUX_USER}
       - INFLUXDB_INIT_PWD=${INFLUX_PASSWD}
-      - PRE_CREATE_DB=speedtest
+    env_file:
+      - ./env/db.env
   web:
     image: pedrocesarti/internet-speedtest-docker:grafana 
     links:
@@ -19,15 +20,15 @@ services:
     environment:
       - HTTP_USER=${GRAFANA_USER}
       - HTTP_PASS=${GRAFANA_PASSWD}
-      - INFLUXDB_PROTO=http
-      - INFLUXDB_HOST=localhost
-      - INFLUXDB_PORT=8086
-      - INFLUXDB_NAME=speedtest
       - INFLUXDB_USER=${INFLUX_USER}
       - INFLUXDB_PASS=${INFLUX_PASSWD}
+    env_file:
+      - ./env/web.env
   testing:
     image: pedrocesarti/internet-speedtest-docker:speedtest
     links:
       - db:db
     environment:
       - TEST_INTERVAL=${TEST_INTERVAL}
+    env_file:
+      - ./env/testing.env
