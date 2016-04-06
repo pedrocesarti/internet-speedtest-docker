@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "=> Creating basic auth for \"${HTTP_USER}\" user with ${_word} password"
+echo "=> Creating basic auth for \"${HTTP_USER}\" "
 echo ${GRAFANA_PASSWD} | htpasswd -i -c /app/grafana/.htpasswd  ${GRAFANA_USER}
 echo "=> Done!"
 
