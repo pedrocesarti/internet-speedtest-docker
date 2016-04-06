@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "=> Creating basic auth for \"${HTTP_USER}\" user with ${_word} password"
-echo ${PASS} | htpasswd -i -c /app/.htpasswd  ${HTTP_USER}
+echo ${PASS} | htpasswd -i -c /app/grafana/.htpasswd  ${HTTP_USER}
 echo "=> Done!"
 
 
