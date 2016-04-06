@@ -15,7 +15,7 @@ server {
 		auth_basic            "Restricted";
 		auth_basic_user_file /app/grafana/.htpasswd;
 
-		if ($http_origin ~* (https?://[^/]*\.somedomain\.com(:[0-9]+)?)) {
+		if ($http_origin ~* 'https?://(localhost|www\.pedrocesar\.info)') {
 			set $cors "true";
 	}
 
