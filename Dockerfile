@@ -16,14 +16,14 @@ ADD conf/default /etc/nginx/sites-enabled/default
 ADD conf/default.json /app/grafana/app/dashboards/default.json
 
 ENV HTTP_USER admin
-ENV HTTP_PASS **Random**
+ENV HTTP_PASS anything
 
 ENV INFLUXDB_PROTO http
 ENV INFLUXDB_HOST db
 ENV INFLUXDB_PORT 8086
 ENV INFLUXDB_NAME speedtest
 ENV INFLUXDB_USER root
-ENV INFLUXDB_PASS root
+ENV INFLUXDB_PASS anything
 ENV INFLUXDB_IS_GRAFANADB false
 
 ADD scripts/init_grafana.sh /app/grafana/init_grafana.sh
