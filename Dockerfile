@@ -2,6 +2,7 @@ FROM tutum/nginx
 MAINTAINER Pedro César <pedrocesar.ti@gmail.com>
 
 ENV GRAFANA_VERSION 2.1.2.linux-x64 
+ENV GRAFANA_VERSION_REDUCED 2.1.2 
 
 RUN apt-get update && apt-get install -y wget apache2-utils
 RUN wget http://grafanarel.s3.amazonaws.com/builds/grafana-${GRAFANA_VERSION}.tar.gz -O grafana.tar.gz && \
@@ -9,7 +10,7 @@ RUN wget http://grafanarel.s3.amazonaws.com/builds/grafana-${GRAFANA_VERSION}.ta
     rm grafana.tar.gz && \
     rm -rf app && \
     mkdir -p /app && \
-    mv grafana-${GRAFANA_VERSION} /app/grafana
+    mv grafana-${GRAFANA_VERSION_REDUCED} /app/grafana
 
 ADD conf/config.js /app/grafana/config.js
 ADD conf/default /etc/nginx/sites-enabled/default
