@@ -11,19 +11,6 @@ services:
       - INFLUXDB_INIT_PWD=${INFLUX_PASSWD}
     env_file:
       - ./env/db.env
-  web:
-    image: pedrocesarti/internet-speedtest-docker:grafana 
-    links:
-      - db:db
-    ports:
-      - "80:3000"
-    environment:
-      - HTTP_USER=${GRAFANA_USER}
-      - HTTP_PASS=${GRAFANA_PASSWD}
-      - GF_SERVER_ROOT_URL http://localhost
-      - GF_SECURITY_ADMIN_PASSWORD pedrocesar 
-    env_file:
-      - ./env/web.env
   testing:
     image: pedrocesarti/internet-speedtest-docker:speedtest
     links:
