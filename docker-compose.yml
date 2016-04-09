@@ -16,7 +16,7 @@ services:
     links:
       - db:db
     ports:
-      - "8080:80"
+      - "80:3000"
     environment:
       - HTTP_USER=${GRAFANA_USER}
       - HTTP_PASS=${GRAFANA_PASSWD}
