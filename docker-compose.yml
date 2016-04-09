@@ -11,6 +11,16 @@ services:
       - INFLUXDB_INIT_PWD=${INFLUX_PASSWD}
     env_file:
       - ./env/db.env
+  web:
+    image: grafana/grafana 
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SERVER_ROOT_URL=${GRAFANA_URL}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWD}
+    volumes:
+      - ./storage:/var/lib/grafana
+      - ./storage2/home.json:/usr/share/grafana/public/dashboards/home.json
   testing:
     image: pedrocesarti/internet-speedtest-docker:speedtest
     links:
