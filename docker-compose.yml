@@ -6,9 +6,6 @@ services:
     ports:
       - "8083:8083"
       - "8086:8086"
-    environment:
-      - ADMIN_USER=${INFLUX_USER}
-      - INFLUXDB_INIT_PWD=${INFLUX_PASSWD}
     env_file:
       - ./env/db.env
   web:
