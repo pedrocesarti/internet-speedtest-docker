@@ -20,8 +20,8 @@ services:
     environment:
       - HTTP_USER=${GRAFANA_USER}
       - HTTP_PASS=${GRAFANA_PASSWD}
-      - INFLUXDB_USER=${INFLUX_USER}
-      - INFLUXDB_PASS=${INFLUX_PASSWD}
+      - GF_SERVER_ROOT_URL http://localhost
+      - GF_SECURITY_ADMIN_PASSWORD pedrocesar 
     env_file:
       - ./env/web.env
   testing:
