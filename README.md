@@ -18,11 +18,18 @@ docker-compose up -d
 ```
 
 ## Docker Compose
-As you probably know Docker Compose is a tool to let you running a multi-container application, so as I sad before I put together some contaiers to make everything work together. They are described below.
+As you probably know Docker Compose is a tool to let you running a multi-container application, so as I sad before I put together some contaiers to make everything work together. They are described below:
 
 ### InfluxDB (DB)
+InfluxDB is a database tool based on time-series, so every event is registrate with their timestamp. I decided to use InfluxDB at first because has great integration with Grafana and second I don't take cara about timestamp and how generate the graphs based on time.
+
+I used [tutumcloud/influxdb](https://github.com/tutumcloud/influxdb) image because is very useful and all parametrized so is easy to use.
 
 ### Grafana (Web)
+Grafana is a tool to create and manage dashboards and graphs. It's a really cool tool and as I sad earlier has a perfect integration with InfluxDB.
+
+When I started this project I used [tutumcloud/grafana](https://github.com/tutumcloud/grafana) image, however they stopped to update grafana image beacause the new version has a different way to be installed, so it's deprecated. So I used [grafana](https://hub.docker.com/r/grafana/grafana/) original image as a base system to generate my own image.
+
 
 ### SpeedTest (Testing)
 
