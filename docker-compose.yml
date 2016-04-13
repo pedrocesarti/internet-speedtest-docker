@@ -16,7 +16,7 @@ services:
       - db:db
     environment:
       - GF_SERVER_ROOT_URL=http://localhost
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWD}
+      - GF_SECURITY_ADMIN_PASSWORD=teste
   testing:
     image: pedrocesarti/internet-speedtest-docker:speedtest
     links:
