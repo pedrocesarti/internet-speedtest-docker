@@ -117,6 +117,7 @@
                   }
                 ]
               ],
+              "alias": "Download",
               "measurement": "download",
               "query": "SELECT mean(\"value\") FROM \"download\" WHERE $timeFilter GROUP BY time($interval) fill(null)"
             }
@@ -235,6 +236,7 @@
                   }
                 ]
               ],
+              "alias": "Download",
               "measurement": "upload",
               "query": "SELECT mean(\"value\") FROM \"upload\" WHERE $timeFilter GROUP BY time($interval) fill(null)"
             }
