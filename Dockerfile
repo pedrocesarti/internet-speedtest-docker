@@ -6,5 +6,5 @@ ADD conf/home.json /usr/share/grafana/public/dashboards/home.json
 
 ENV GF_SERVER_ROOT_URL http://localhost
 ENV GF_SECURITY_ADMIN_PASSWORD "1199"
-ENV GF_AUTH_ANONYMOUS_ENABLED true
+#ENV GF_AUTH_ANONYMOUS_ENABLED true
 ENTRYPOINT ["/run.sh"]
