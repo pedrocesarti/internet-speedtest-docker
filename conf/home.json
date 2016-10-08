@@ -26,14 +26,14 @@
               "min": null,
               "max": null,
               "logBase": 1,
-              "format": "short"
+              "format": "MBs"
             },
             {
               "show": true,
               "min": null,
               "max": null,
               "logBase": 1,
-              "format": "short"
+              "format": "MBs"
             }
           ],
           "isNew": true,
@@ -43,8 +43,8 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "short",
-            "short"
+            "MBs",
+            "MBs"
           ],
           "grid": {
             "leftLogBase": 1,
@@ -144,14 +144,14 @@
               "min": null,
               "max": null,
               "logBase": 1,
-              "format": "short"
+              "format": "MBs"
             },
             {
               "show": true,
               "min": null,
               "max": null,
               "logBase": 1,
-              "format": "short"
+              "format": "MBs"
             }
           ],
           "isNew": true,
@@ -161,8 +161,8 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "short",
-            "short"
+            "MBs",
+            "MBs"
           ],
           "grid": {
             "leftLogBase": 1,
