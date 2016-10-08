@@ -236,7 +236,7 @@
                   }
                 ]
               ],
-              "alias": "Download",
+              "alias": "Upload",
               "measurement": "upload",
               "query": "SELECT mean(\"value\") FROM \"upload\" WHERE $timeFilter GROUP BY time($interval) fill(null)"
             }
