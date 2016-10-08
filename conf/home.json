@@ -20,6 +20,22 @@
           "span": 12,
           "editable": true,
           "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
           "isNew": true,
           "id": 1,
           "datasource": "InfluxDB",
@@ -27,7 +43,7 @@
           "x-axis": true,
           "y-axis": true,
           "y_formats": [
-            "MBs",
+            "short",
             "MBs"
           ],
           "grid": {
@@ -122,6 +138,22 @@
           "span": 12,
           "editable": true,
           "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "short"
+            }
+          ],
           "isNew": true,
           "id": 2,
           "datasource": "InfluxDB",
