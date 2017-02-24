@@ -9,13 +9,12 @@ Here in Brazil is a mess to contract a good ISP, they just don't delivery the sp
 
 
 ## Running container
-The only requirement to run this compose is have Docker Compose installed, if you need to install you can [click here]() to check out how can you do that. After installed the only thing you need is export a variable and run the compose as command available below:
+The only requirement to run this compose is have Docker Compose installed, if you need to install you can [click here](https://docs.docker.com/compose/install/) to check out how can you do that. After installed the only thing you need is export a variable and run the compose as command available below:
 
 ```shell
 git clone https://github.com/pedrocesar-ti/internet-speedtest-docker.git
 cd internet-speedtest-docker
 
-export GRAFANA_PASSWD=your_password
 docker-compose up -d 
 ```
 
@@ -43,6 +42,7 @@ When I started this project I used [tutumcloud/grafana](https://github.com/tutum
 
 You can also customize this image with few variables:
 
+###DEPRECATED
 | Variables  | Default | Function |
 |---------|--------|--------|
 | **GF_SERVER_ROOT** | http://localhost | Set URL to configure Grafana built-in web server. |
