@@ -54,8 +54,6 @@ You can also customize this image with few variables:
 ### SpeedTest (Testing)
 This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on donwload and upload some content from servers configured previously.
 
-<p align="center"><img src="https://dl.dropboxusercontent.com/s/tyno7ouitnosk51/Screen%20Shot%202017-02-28%20at%2000.07.41.png"SpeedTest"></p>
-
 The only variable to customize on this image is a variable to set the frequency that this script will run.
 
 | Variables  | Default | Function |
