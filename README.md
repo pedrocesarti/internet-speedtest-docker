@@ -12,11 +12,11 @@ Here in Brazil is a mess to contract a good ISP, they just don't delivery the sp
 ## Running container
 The only requirement to run this compose is have Docker Compose installed, if you need to install you can [click here](https://docs.docker.com/compose/install/) to check out how can you do that. After installed the only thing you need is export the variables that you like and run the compose as command available below:
 
-```shell
-git clone https://github.com/pedrocesar-ti/internet-speedtest-docker.git
-cd internet-speedtest-docker
+```console
+$ git clone https://github.com/pedrocesar-ti/internet-speedtest-docker.git
+$ cd internet-speedtest-docker
 
-docker-compose up -d 
+$ docker-compose up -d 
 ```
 
 ## Docker Compose
@@ -24,6 +24,8 @@ As you probably know Docker Compose is a tool to let you running a multi-contain
 
 ### InfluxDB (DB)
 InfluxDB is a database tool based on time-series, so every event is registrate with their timestamp. I decided to use InfluxDB at first because has great integration with Grafana and second I don't take cara about timestamp and how generate the graphs based on time.
+
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/u8urqvu85ob8zdn/Screen%20Shot%202017-02-28%20at%2000.03.36.png"InfluxDB"></p>
 
 I used [tutumcloud/influxdb](https://github.com/tutumcloud/influxdb) image because is very useful and all parametrized so is easy to use.
 
@@ -51,6 +53,8 @@ You can also customize this image with few variables:
 
 ### SpeedTest (Testing)
 This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on donwload and upload some content from servers configured previously.
+
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/tyno7ouitnosk51/Screen%20Shot%202017-02-28%20at%2000.07.41.png"SpeedTest"></p>
 
 The only variable to customize on this image is a variable to set the frequency that this script will run.
 
