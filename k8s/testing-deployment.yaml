@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: testing
+  name: testing
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: testing
+    spec:
+      containers:
+      - env:
+        - name: TEST_INTERVAL
+          value: "5"
+        image: pedrocesarti/internet-speedtest-docker:speedtest
+        name: testing
+        resources: {}
+      restartPolicy: Always
+status: {}
