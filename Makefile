@@ -14,6 +14,9 @@ haproxy:
 run:
 	@bash -x minikube/run.sh
 
+create:
+	@bash -x minikube/create.sh
+
 help:
 	@printf "Available targets:\n\n"
 	@awk '/^[a-zA-Z\-\_0-9%:\\]+:/ { \
