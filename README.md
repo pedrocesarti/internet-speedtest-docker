@@ -27,15 +27,15 @@ InfluxDB is a database tool based on time-series, so every event is registrate w
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/u8urqvu85ob8zdn/Screen%20Shot%202017-02-28%20at%2000.03.36.png"InfluxDB"></p>
 
-I used [tutumcloud/influxdb](https://github.com/tutumcloud/influxdb) image because is very useful and all parametrized so is easy to use.
+This project uses the official InfluxDB image hosted in the Docker Hub Library.
 
 You can customize some actions with variables listed below:
 
 | Variables  | Default | Function |
 |---------|--------|--------|
-| **ADMIN_USER** | admin | Set root user for the database. |
-| **INFLUXDB_INIT_PWD** | password | Set the password for the root user. |
-| **PRE_CREATE_DB** | password | Create a database **speedtest** when container starts. |
+| **INFLUXDB_ADMIN_USER** | admin | Set root user for the database. |
+| **INFLUXDB_ADMIN_PASSWORD** | password | Set the password for the root user. |
+| **INFLUXDB_DB** | speedtest | Create a database **speedtest** when container starts. |
 
 
 ### Grafana (Web)
@@ -64,7 +64,7 @@ The only variable to customize on this image is a variable to set the frequency 
 Repositories used to
 ---------------------------------
 
-* [tutumcloud/influxdb](https://github.com/tutumcloud/influxdb)
+* [influxdb](https://hub.docker.com/_/influxdb/)
 * [Grafana](https://hub.docker.com/r/grafana/grafana/)
 * [tutumcloud/grafana](https://github.com/tutumcloud/grafana)
 * [SpeedTest](https://github.com/sivel/speedtest-cli/)
