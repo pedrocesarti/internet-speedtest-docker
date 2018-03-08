@@ -64,7 +64,7 @@ The only variable to customize on this image is a variable to set the frequency 
 Repositories used to
 ---------------------------------
 
-* [influxdb](https://hub.docker.com/_/influxdb/)
+* [influxdb](https://hub.docker.com/_/influxdb/) 
 * [Grafana](https://hub.docker.com/r/grafana/grafana/)
 * [tutumcloud/grafana](https://github.com/tutumcloud/grafana)
 * [SpeedTest](https://github.com/sivel/speedtest-cli/)
