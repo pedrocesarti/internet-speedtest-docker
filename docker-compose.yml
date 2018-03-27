@@ -2,7 +2,10 @@
 version: '2'
 services:
   db:
-    image: tutum/influxdb 
+    image: influxdb 
+    container_name: influxdb
+    volumes:
+      - "/data/influxdb/:/var/lib/influxdb"
     ports:
       - "8083:8083"
       - "8086:8086"
@@ -10,6 +13,7 @@ services:
       - ./env/db.env
   web:
     image: pedrocesarti/internet-speedtest-docker:grafana 
+    container_name: speedweb
     ports:
       - "3000:3000"
     links:
@@ -19,6 +23,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=teste
   testing:
     image: pedrocesarti/internet-speedtest-docker:speedtest
+    container_name: speedtest
     links:
       - db:db
     env_file:
