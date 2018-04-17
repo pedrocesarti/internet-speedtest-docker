@@ -14,7 +14,8 @@ haproxy:
 run:
 	@bash -x minikube/run.sh
 
-create:
+## Deploy k8s objects
+deploy:
 	@bash -x minikube/create.sh
 
 help:
