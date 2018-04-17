@@ -1,22 +1,22 @@
-# Run docker-compose
+## Run docker-compose
 compose:
 	@docker-compose up -d docker-compose.yml
 
 ## Run minikube
 minikube:
-	@bash -x minikube/minikube.sh
+	@bash -x scripts/minikube.sh
 
 ## Run haproxy
 haproxy:
-	@bash -x minikube/haproxy.sh
+	@bash -x scripts/haproxy.sh
 
 ## Run minikube & haproxy
 run:
-	@bash -x minikube/run.sh
+	@bash -x scripts/run.sh
 
 ## Deploy k8s objects
 deploy:
-	@bash -x minikube/create.sh
+	@bash -x scripts/create.sh
 
 help:
 	@printf "Available targets:\n\n"
