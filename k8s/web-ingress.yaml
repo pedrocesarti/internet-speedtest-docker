@@ -6,13 +6,13 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   backend:
-    serviceName: default-http-backend
+    serviceName: web
     servicePort: 80
   rules:
-  - host: nuc.local
+  - host:
     http:
       paths:
       - path: /
         backend:
           serviceName: web
-          servicePort: 3000
+          servicePort: web

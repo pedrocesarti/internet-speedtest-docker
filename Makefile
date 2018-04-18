@@ -16,7 +16,7 @@ run:
 
 ## Deploy k8s objects
 deploy:
-	@bash -x scripts/create.sh
+	@bash -x scripts/deploy.sh
 
 help:
 	@printf "Available targets:\n\n"
