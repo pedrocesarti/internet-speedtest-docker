@@ -62,13 +62,15 @@ You can also customize this image with few variables:
 
 
 ### SpeedTest (Testing)
-This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on donwload and upload some content from servers configured previously.
+This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on donwload and upload some content from servers configured previously (in average this test takes around 30 sec, at least in my case).
 
-The only variable to customize on this image is a variable to set the frequency that this script will run.
+The only variable to customize on this image is a variable to set the frequency that this script will run in seconds. So if you need your test to run every minute, change the variable to 60 seconds. Just bear in mind that the speed test execution time will be added on top of the test interval so you might end up with data points every 1 minute and something. 
+
+If you are using docker-compose to standup you stack you can easily change the variable value on the [env/testing.env](./env/testing.env) file.
 
 | Variables  | Default | Function |
 |---------|--------|--------|
-| **TIME_INTERVAL** | 600 | Time (in sec.) to set how long will sleep the script until run again. |
+| **TEST_INTERVAL** | 5 | Time (in sec.) to set how long will sleep the script until run again. |
 
 
 Repositories used to
