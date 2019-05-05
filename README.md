@@ -78,7 +78,6 @@ Repositories used to
 
 * [influxdb](https://hub.docker.com/_/influxdb/) 
 * [Grafana](https://hub.docker.com/r/grafana/grafana/)
-* [tutumcloud/grafana](https://github.com/tutumcloud/grafana)
 * [SpeedTest](https://github.com/sivel/speedtest-cli/)
 
 Enjoy! :)
