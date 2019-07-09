@@ -62,7 +62,7 @@ You can also customize this image with few variables:
 
 
 ### SpeedTest (Testing)
-This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on donwload and upload some content from servers configured previously (in average this test takes around 30 sec, at least in my case).
+This image was created to run a script that calls speedtest-cli to test the internet connect and save data on InfluxDB. [SpeedTest](https://github.com/sivel/speedtest-cli/) is a tool written in Python and is used to test your Internet connection based on download and upload some content from servers configured previously (in average this test takes around 30 sec, at least in my case).
 
 The only variable to customize on this image is a variable to set the frequency that this script will run in seconds. So if you need your test to run every minute, change the variable to 60 seconds. Just bear in mind that the speed test execution time will be added on top of the test interval so you might end up with data points every 1 minute and something. 
 
