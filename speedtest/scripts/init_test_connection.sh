@@ -5,7 +5,12 @@ while true
 do 
 	TIMESTAMP=$(date '+%s')
 
-	/app/speedtest/speedtest-cli > $FILE
+	COMMAND=/app/speedtest/speedtest-cli
+	if [ -n "${SERVER}" ]; then
+		COMMAND="${COMMAND} --server ${SERVER}"
+	fi
+
+	eval "${COMMAND} > ${FILE}"
 
 	DOWNLOAD=$(cat $FILE | grep "Download:" | awk -F " " '{print $2}')
 	UPLOAD=$(cat $FILE | grep "Upload:" | awk -F " " '{print $2}')
