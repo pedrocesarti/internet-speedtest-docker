@@ -6,8 +6,8 @@ do
 	TIMESTAMP=$(date '+%s')
 
 	COMMAND=/app/speedtest/speedtest-cli
-	if [ -n "${SERVER}" ]; then
-		COMMAND="${COMMAND} --server ${SERVER}"
+	if [ -n "${TEST_SERVER}" ]; then
+		COMMAND="${COMMAND} --server ${TEST_SERVER}"
 	fi
 
 	eval "${COMMAND} > ${FILE}"
