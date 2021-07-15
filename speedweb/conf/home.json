@@ -250,6 +250,127 @@
       "title": "Row",
       "collapse": false,
       "editable": true
+    },
+    {
+      "height": "610px",
+      "panels": [
+        {
+          "title": "Ping",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "yaxes": [
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "ms"
+            },
+            {
+              "show": true,
+              "min": null,
+              "max": null,
+              "logBase": 1,
+              "format": "ms"
+            }
+          ],
+          "isNew": true,
+          "id": 3,
+          "datasource": "InfluxDB",
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "ms",
+            "ms"
+          ],
+          "grid": {
+            "leftLogBase": 1,
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "rightLogBase": 1,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 1,
+          "linewidth": 2,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": true
+          },
+          "timeFrom": null,
+          "timeShift": null,
+          "targets": [
+            {
+              "refId": "A",
+              "dsType": "influxdb",
+              "resultFormat": "time_series",
+              "tags": [],
+              "groupBy": [
+                {
+                  "type": "time",
+                  "params": [
+                    "$interval"
+                  ]
+                },
+                {
+                  "type": "fill",
+                  "params": [
+                    "null"
+                  ]
+                }
+              ],
+              "select": [
+                [
+                  {
+                    "type": "field",
+                    "params": [
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "mean",
+                    "params": []
+                  }
+                ]
+              ],
+              "alias": "Ping",
+              "measurement": "ping",
+              "query": "SELECT mean(\"value\") FROM \"ping\" WHERE $timeFilter GROUP BY time($interval) fill(null)"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": [],
+          "height": "250px"
+        }
+      ],
+      "title": "Row",
+      "collapse": false,
+      "editable": true
     }
   ],
   "time": {
@@ -260,6 +381,8 @@
     "enable": false,
     "type": "timepicker",
     "time_options": [
+      "30s",
+      "1m",
       "5m",
       "15m",
       "1h",
