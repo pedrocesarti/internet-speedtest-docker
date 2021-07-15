@@ -2,7 +2,7 @@
 version: '2'
 services:
   db:
-    image: influxdb
+    image: influxdb:1.8
     container_name: influxdb
     volumes:
       - "./data/influxdb/:/var/lib/influxdb"
