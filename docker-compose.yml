@@ -6,9 +6,6 @@ services:
     container_name: influxdb
     volumes:
       - "./data/influxdb/:/var/lib/influxdb"
-    ports:
-      - "8083:8083"
-      - "8086:8086"
     env_file:
       - ./env/db.env
   web:
