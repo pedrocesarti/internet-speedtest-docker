@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: speedtest
+  name: speedtest
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: speedtest
+    spec:
+      containers:
+      - name: testing
+        image: pedrocesarti/internet-speedtest-docker:speedtest
+        env:
+        - name: TEST_INTERVAL
+          value: "5"
+      - name: web
+        image: pedrocesarti/internet-speedtest-docker:grafana
+        env:
+        - name: GF_SERVER_ROOT_URL
+          value: http://localhost
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: teste
+        ports:
+        - containerPort: 3000
+      - name: db
+        image: tutum/influxdb
+        env:
+        - name: ADMIN_USER
+          value: admin
+        - name: INFLUXDB_INIT_PWD
+          value: password
+        - name: PRE_CREATE_DB
+          value: speedtest
+        ports:
+        - containerPort: 8083
+        - containerPort: 8086
+      restartPolicy: Always
+status: {}

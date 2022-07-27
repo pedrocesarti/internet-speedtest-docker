@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: speedtest-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  backend:
+    serviceName: web
+    servicePort: 80
+  rules:
+  - host:
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: web
+          servicePort: web

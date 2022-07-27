@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: db
+  name: db
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: db
+    spec:
+      containers:
+      - env:
+        - name: ADMIN_USER
+          value: admin
+        - name: INFLUXDB_INIT_PWD
+          value: password
+        - name: PRE_CREATE_DB
+          value: speedtest
+        image: tutum/influxdb
+        name: db
+        ports:
+        - containerPort: 8083
+        - containerPort: 8086
+        resources: {}
+      restartPolicy: Always
+status: {}
