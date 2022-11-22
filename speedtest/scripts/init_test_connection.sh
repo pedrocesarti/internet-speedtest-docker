@@ -5,7 +5,7 @@ while true
 do 
     TIMESTAMP=$(date '+%s')
 
-	COMMAND=/app/speedtest/speedtest-cli
+	COMMAND="/app/speedtest/speedtest-cli --secure"
 	if [ -n "${TEST_SERVER}" ]; then
 		COMMAND="${COMMAND} --server ${TEST_SERVER}"
 	fi
